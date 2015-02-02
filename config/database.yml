@@ -24,6 +24,10 @@ default: &default
 development:
   <<: *default
   database: social_development
+  pool: 5
+  username: postgres
+  password: password
+  host: localhost
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -58,6 +62,10 @@ development:
 test:
   <<: *default
   database: social_test
+  pool: 5
+  username: postgres
+  password: password
+  host: localhost
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,5 +89,8 @@ test:
 production:
   <<: *default
   database: social_production
-  username: social
-  password: <%= ENV['SOCIAL_DATABASE_PASSWORD'] %>
+  pool: 5
+  username: postgres
+  password: password
+  host: localhost
+
