@@ -3,3 +3,4 @@ class AddPasswordDigistToUsers < ActiveRecord::Migration
     add_column :users, :password_digest, :string
   end
 end
+
