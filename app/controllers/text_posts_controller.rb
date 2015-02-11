@@ -18,7 +18,7 @@ class TextPostsController < ApplicationController
 	end
 
 	def update
-		@text_post = crrent_user.text_posts.find(params[:id])
+		@text_post = current_user.text_posts.find(params[:id])
 		if @text_post.update(text_post_params)
 			redirect_to post_path(@text_post), notice: "Post Updated!"
 		else
