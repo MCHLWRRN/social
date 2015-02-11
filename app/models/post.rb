@@ -4,4 +4,10 @@ class Post < ActiveRecord::Base
   validates :type, presence: true
 
   has_many :comments
+
+  def cached_comment_count
+  	Rails.cache.fetch [self, "comment_count"] do
+  		comments.size
+  	end
+  end
 end
